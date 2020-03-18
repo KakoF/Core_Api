@@ -31,12 +31,19 @@ namespace Agendamento.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            //services.AddControllers();
             services.AddDbContext<AppDbContext>(options => {
                 options.UseNpgsql(Configuration.GetConnectionString("agendamentoDB"));
             });
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IUsuarioService, UsuarioService>();
+
+            services.AddScoped<ISalaRepository, SalaRepository>();
+            services.AddScoped<ISalaService, SalaService>();
+
+            services.AddScoped<IAgendamentoRepository, AgendamentoRepository>();
+            services.AddScoped<IAgendamentoService, AgendamentoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

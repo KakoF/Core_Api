@@ -23,7 +23,8 @@ namespace Agendamento.API.Persistence.Repositories
 
         public async Task<IEnumerable<Domain.Models.Agendamento>> ListAsync()
         {
-            return await _context.Agendamentos.ToListAsync();
+            //return await _context.Agendamentos.ToListAsync();
+             return await _context.Agendamentos.Include(b => b.Sala).Include(b => b.Usuario).ToListAsync();
         }
 
         public void Remove(Domain.Models.Agendamento agendamento)

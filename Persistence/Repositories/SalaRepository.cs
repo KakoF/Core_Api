@@ -23,7 +23,8 @@ namespace Agendamento.API.Persistence.Repositories
 
         public async Task<IEnumerable<Sala>> ListAsync()
         {
-            return await _context.Salas.ToListAsync();
+            //return await _context.Salas.ToListAsync();
+            return await _context.Salas.Include(b => b.Agendamentos).ToListAsync();
         }
 
         public void Remove(Sala sala)
