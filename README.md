@@ -11,3 +11,7 @@ dotnet build
 
 ## Startar a aplicação estruturando e semeando o banco:
 dotnet run
+
+
+## Mais sobre as relations:
+https://docs.microsoft.com/pt-br/ef/ef6/querying/related-data
