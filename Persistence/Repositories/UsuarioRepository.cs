@@ -11,9 +11,10 @@ namespace Agendamento.API.Persistence.Repositories
     {
         public UsuarioRepository(AppDbContext context) : base(context)
         { }
-        public async Task AddAsync(Usuario usuario)
+        public async Task<int> AddAsync(Usuario usuario)
         {
-          await _context.Usuarios.AddAsync(usuario);
+          var user = await _context.Usuarios.AddAsync(usuario);
+          return user.Context.SaveChanges();
         }
 
         public async Task<Usuario> FindByIdAsync(int id)
@@ -35,5 +36,7 @@ namespace Agendamento.API.Persistence.Repositories
         {
             _context.Usuarios.Update(usuario);
         }
+
+       
     }
 }

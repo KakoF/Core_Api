@@ -18,5 +18,10 @@ namespace Agendamento.API.Services
         {
             return await _usuarioRepository.ListAsync();
         }
+
+        public Task<int> AddAsync(Usuario usuario)
+        {
+            return _usuarioRepository.AddAsync(usuario);
+        }
     }
 }

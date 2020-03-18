@@ -6,6 +6,8 @@ namespace Agendamento.API.Domain.Services
 {
     public interface IUsuarioService
     {
-        Task<IEnumerable<Usuario>> ListAsync();     
+        Task<IEnumerable<Usuario>> ListAsync();   
+
+        Task<int> AddAsync(Usuario usuario);     
     }
 }
