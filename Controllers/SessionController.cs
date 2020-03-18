@@ -18,7 +18,7 @@ namespace Agendamento.API.Controllers
         public async Task<IActionResult> AuthenticateAsync([FromBody]Usuario model)
         {
             //return Ok(2);
-            var id = await _usuarioService.AddAsync(model);
+            var id = await _usuarioService.Registrar(model);
             return Ok(id);
             //return Ok(usuario);
             /*if (user == null)

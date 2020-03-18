@@ -8,6 +8,6 @@ namespace Agendamento.API.Domain.Services
     {
         Task<IEnumerable<Usuario>> ListAsync();   
 
-        Task<int> AddAsync(Usuario usuario);     
+        Task<int> Registrar(Usuario usuario);     
     }
 }
