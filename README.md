@@ -15,3 +15,5 @@ dotnet run
 
 ## Mais sobre as relations:
 https://docs.microsoft.com/pt-br/ef/ef6/querying/related-data
+## Mais sobre as JWT:
+https://jasonwatmore.com/post/2018/08/14/aspnet-core-21-jwt-authentication-tutorial-with-example-api
